@@ -114,3 +114,4 @@ if(Costo_Compra< Cliente_SaldoActual)
 
 // Actualizar el valor de los Objetos
 
+console.log(`El objeto actualmente tiene los siguientes valores`)
