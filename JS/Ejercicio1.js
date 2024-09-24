@@ -1,44 +1,54 @@
-//Ejercicio 1
+// EJERCICIO 01 : Declaracion de variables
 
-var name = "Francisco";
-var lastname;
-var age = 20;
+// a) Var
 
-//El objeto de console nos permite enviar datos a la terminal y poder visualizar
-// el valor de la variable o el resultado de la funcion o metodo
+console.warn("--- Declaracion de variables usando: VAR ---");
 
-console.warn("---Declaracion de variables del tipo constante usando: VAR");
-console.log("Intentando leer las variables",name, lastname);
+var miNombre = "Jesus A."
+var misApellidos;
+var miEdad = 20;
 
-lastname = "Garcia";
-console.log("Una vez inicializadas las vuelvo a llamar",name, lastname);
+//El objeto de console nnos permite enviar datos a la terminar y poder visualizar el valor de una variable o resultado de una funcion o metodo
+console.log("Intentando leer las variables:", miNombre, misApellidos);
+
+misApellidos = "Artiaga M."
+
+console.log("Ya que ambas fueron inicializadas, vuelvo a intentar leerlas:", miNombre, misApellidos);
 
 //Una variable puede cambiar en el proceso de ejecucion del programa
 
-// b) Constante
+// b) Const
 
-console.warn("---Declaracion de variables del tipo constante usando: CONST");
-const Uni = "UT Xicotepec";
-const matricula = 230758
-console.log("Hola ", name, " ", lastname, " ,Actualmente estudias en la ", Uni, " con la matricula ", matricula);
+console.warn("--- Declaracion de variables del tipo CONST ---");
 
-//Para saber si el tipo de dato que tiene es una variable o una constante usando typeof()
-console.log("Analizando los datos podemos decir que: ");
-console.log("name es de tipo: ", typeof(name));
-console.log("lastname es de tipo: ", typeof(lastname));
-console.log("Uni es de tipo: ", typeof(Uni));
-console.log("age es de tipo: ", typeof(age));
-console.log("matricula es de tipo: ", typeof(matricula));
+const miUniversidad = "UT Xicotepec";
+const miMatricula = 220772;
 
-let birthdate = "2004/01/25";
-let favouritecolor;
+console.log("Hola,", miNombre, misApellidos, "se que estudias actualmente en la", miUniversidad, "te fue asignada la matricula", miMatricula, "y tienes", miEdad, "años de edad");
 
-console.warn("---Declaracion de variables usando: LET");
-console.log("Genial, te voy conociendo mejor, ahora se que tu naciste el:", birthdate, " y tu color favorito es: ", favouritecolor);
-favouritecolor = "Gray";
-console.log(`Creo que es ${favouritecolor}, le atine`);
+// Para saber el tipo de dato que tiene una variable o constante podemos utilizar la funcion typeOf()
 
-console.log("Analizando los datos puedo deducir que: ");
-console.log("birthdate es de tipo: ", typeof(birthdate));
-console.log("favouritecolor es de tipo: ", typeof(favouritecolor));
+console.log("Analizando los datos puedo deducir que: ")
+console.log("La variable miNombre es del tipo", typeof(miNombre))
+console.log("La variable misApellidos es del tipo", typeof(misApellidos))
+console.log("La variable miUniverdidad es del tipo", typeof(miUniversidad))
+console.log("La variable miEdad es del tipo", typeof(miEdad))
+console.log("La variable miMatricula es del tipo", typeof(miMatricula))
 
+// c) Let
+
+console.warn("--- Declaracion de variables Locales usando LET ---");
+
+let miFechaNacimiento = "2003-11-04";
+let miColorFavorito;
+
+console.log("Genial, te voy conociendo mejor, ahora se que tu naciste el:", miFechaNacimiento, "y que tu color favorito es: mmmmmmmmm dejame pensar....");
+miColorFavorito = "Verde";
+
+//Interpolar datos, es donde se manda a llamar una variable dentro de una string, usando ${}
+console.log(`Creo que es ${miColorFavorito}, le atine?`);
+
+console.log("-------------------")
+console.log("Analizando los datos puedo deducir que: ")
+console.log("Mi color favorito es del tipo", typeof(miColorFavorito))
+console.log("Mi fecha de nacimiento es del tipo", typeof(miFechaNacimiento))
