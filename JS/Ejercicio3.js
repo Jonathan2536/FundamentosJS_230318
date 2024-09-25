@@ -114,4 +114,110 @@ if(Costo_Compra< Cliente_SaldoActual)
 
 // Actualizar el valor de los Objetos
 
-console.log(`El objeto actualmente tiene los siguientes valores`)
+
+
+// console.log(`El objeto actualmente tiene los siguientes valores`)
+
+// console.log(`El objeto actualizado tiene los siguientes valores`)
+
+// let.tipoDisponibildad=typeof(Producto2.Disponibilidad)
+
+console.log("%c5- Agregacion de propiedades de Objeto (Inmutacion)", style_console);
+console.log("Objeto antes de ser modificado")
+console.table(Comprador)
+
+// Agregacion de propiedades
+
+Comprador['Direccion'] = "Calle 2 de Mayo, Numero interios 179, Xicotepec de Juarez.Pue, Mexico"
+
+Comprador['Tipo']="Premium"
+
+Comprador['Estatus'] = "Inactivo"
+
+Comprador['TotalCompras'] = 50000.00
+
+console.log("Objetod despieds de ser mpodificado")
+
+console.table(Comprador)
+
+// Eliminacion de propiedades de Tipopago de Pedido
+
+delete Pedido.TipoPago;
+
+console.log("Objeto despues de ser modificado")
+
+console.table(Pedido)
+
+
+
+console.log("%c7- Metodo para controlar la mutabilidad de los objetos, Congelacion (FREEZE)", style_console);
+
+// Si deseamos no permitir que los objetos sean modificados ni en estructura,  el  valor, utilizamos el metodo FREEZE (Congelar)
+
+console.log('L estructura actual del Objeto COMPRADOR es :')
+
+console.table(Comprador)
+
+Object.freeze(Comprador);
+
+// Intentaremos agregar, eliminar o modificar los valores de sus propiedades
+
+Comprador.FechaUltimaCompra = "25/11/2024 10:50:23"
+delete Comprador.Tipo;
+
+Comprador.Direccion = "Calle de matias q vive por su casa No. 125 Xicotepec de Juarez.Pue Mexico"
+
+console.table(Comprador)
+
+
+
+
+
+console.log("%c8- Metodo para controlar la mutabilidad de los objetos Sellado (SEAL))", style_console);
+
+// Sin embargo, en el caso de que deseemos poder modifcar los valores de las propiedades del objectToString,
+//  pero no su estructura, usaremos SEAL
+console.log ("Objeto antes de ser modificado")
+
+// Se aplico el metodo de sellado SEAL
+
+Object.seal(Pedido)
+
+
+Pedido['FechaPedido']  = "25/03/2024 11:03:03"
+
+delete Pedido['Cantidad']
+
+console.log('Verificamos que se realizaron cambios en el objeto PEDIDO')
+
+console.table (Pedido)
+
+// Ahora intentamos modificar los valores de las propiedades
+
+Pedido.Cantidad = 5
+
+console.log('Verificamos que se realizaron cambios en el objeto PEDIDO')
+
+console.table (Pedido)
+
+//Destructuracion de 2 o mas objetos
+
+console.log("%c9.- Destructuracion de 2 o mas objetos)", style_console);
+
+const{Precio: ProductoPrecio, SKU: ProductoSKU, Marca: ProductoMarca} = Producto
+
+const{Correo: ClienteCoreo, Pais: clientepais, SaldoActual: ClienteSaldoActual } = Comprador
+
+// Tranferir valores cuantutativos en caulitativos
+if{ProductoPrecio=2000}
+    ProductoPrecio= "Carichimo"
+else
+    ProductoPrecio="Baratichimo"
+
+    if{ClienteSaldoActual>0}
+    clientesaldo="A favor"
+
+// Operaciones sobre objetos 
+// Union de objetos
+
+console.log("%c10- Metodo para controlar la mutabilidad de los objetos Sellado (SEAL))", style_console);
