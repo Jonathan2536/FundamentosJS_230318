@@ -39,6 +39,7 @@ console.log(typeof(Producto_SKU));
 console.log("%c2.- Objeto", style_console);
 let Producto = 
 {
+    ID: "1234",
     Nombre : "VAPE", 
     Marca: "Instabar",
     Modelo: "20000", 
@@ -68,6 +69,7 @@ console.log("%c3.- Destructuración de Objetos", style_console);
 
 let Producto2 =
 {   
+    ID: "5678",
     Clave: 316,
     Nombre : "Vape", 
     Marca: "Waka",
@@ -84,6 +86,7 @@ let Producto2 =
 
 let Comprador =
 {
+    ID: "8765",
     Clave: 3216,
     Nombre: "Jonathan",
     Apellidos: "López Morales",
@@ -94,6 +97,7 @@ let Comprador =
 }
 
 let Pedido= {
+    ID: "4321",
     Producto_Clave: 316, 
     Comprador_Clave: 3216,
     Cantidad: 2, 
@@ -209,15 +213,61 @@ const{Precio: ProductoPrecio, SKU: ProductoSKU, Marca: ProductoMarca} = Producto
 const{Correo: ClienteCoreo, Pais: clientepais, SaldoActual: ClienteSaldoActual } = Comprador
 
 // Tranferir valores cuantutativos en caulitativos
-if{ProductoPrecio=2000}
-    ProductoPrecio= "Carichimo"
+if(precioproducto=2000)
+    precioproducto= "Carichimo"
 else
-    ProductoPrecio="Baratichimo"
+precioproducto="Baratichimo"
 
-    if{ClienteSaldoActual>0}
+    if(ClienteSaldoActual>0)
     clientesaldo="A favor"
+    else if(clientesaldo<0)
+        clientesaldo="En contra"
+    else
+    clientesaldo="Sin deuda"
 
+// Trsanformar valores cualitativos en cuantitativos
+let clienteTipo = Comprador.Tipo;
+
+let clienteNivel1;
+if(clienteTipo=="premium")
+    clienteNivel1 = 1
+if(clienteTipo=="freemium")
+    clienteNivel1=2
+if(clienteTipo=="No identificado")
+    clienteNivel1=3
+
+// Clasificamos al cliente por su pais de origrn
+
+
+if(clientepais=="Mexico")
+    clientepais="Extranjero"
+
+let datoClientePromociones=(ClienteCoreo,clientepais,clienteNivel1,clientesaldo,ProductoMarca,precioproducto)
+console.log("Los daros del cliente y sus habits de compra son:")
+console.table(datoClientePromociones)
 // Operaciones sobre objetos 
 // Union de objetos
 
-console.log("%c10- Metodo para controlar la mutabilidad de los objetos Sellado (SEAL))", style_console);
+console.log("%c11- Metodo para controlar la mutabilidad de los objetos Sellado (SEAL))", style_console);
+
+console.log("Impeimimos la estructura y valores en Objetos PRODUCTO")
+ console.table(Producto);
+
+console.log("Imprimimos la estructura y valores de Objetos PEDIDO")
+ console.table(Pedido);
+
+console.log("%c10- Union de Objetos usando el SPEAD OPERATOR (ASAY))", style_console);
+
+console.table(Producto);
+console.table(Comprador);
+console.table(Pedido);
+
+let Venta2 = { 
+    producto : {... Producto },
+    comprador: {... Comprador},
+    pedido : {... Pedido}
+
+}
+    console.log("Fusionamps los 3 Objetos en uno nuevo sin perdida de informacion")
+    console.log(Venta2)
+    console.table(Venta2)
